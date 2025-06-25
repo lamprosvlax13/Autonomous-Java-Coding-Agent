@@ -5,6 +5,7 @@ import java.util.List;
 public class ClassInfo {
     private String name;
     private String javadoc;
+    private String rawCode;
     private List<MethodInfo> methods = new ArrayList<>();
     private List<FieldInfo> fields = new ArrayList<>();
     private List<ConstructorInfo> constructors = new ArrayList<>();
@@ -38,5 +39,13 @@ public class ClassInfo {
 
     public void setJavadoc(String javadoc){
         this.javadoc = javadoc;
+    }
+
+    public MethodInfo[] getMethods(){
+        return methods.toArray(new MethodInfo[methods.size()]);
+    }
+
+    public void setRawCode(String rawCode){
+        this.rawCode = rawCode;
     }
 }

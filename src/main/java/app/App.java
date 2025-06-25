@@ -15,6 +15,8 @@ public class App {
         String inputPrompt = scanner.nextLine();
         String generatedCode = generator.generate(inputPrompt);
         // Todo Add-ons
+
+        // Todo 0. Use nlp -> recognize Class, methods, from text
             // Todo: 1. call Java Parser
             //   Todo: 2. call Optimizer
             //      Todo 3. find Bugs + risks memory leeks
