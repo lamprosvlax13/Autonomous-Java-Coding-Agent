@@ -1,6 +1,6 @@
 package javacodingagent.ai;
 
-import com.javacodingagent.config.ConfigManager;
+import config.ConfigManager;
 
 public class AIClientFactory {
     public static AIClient createClient() {

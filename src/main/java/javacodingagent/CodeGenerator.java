@@ -1,4 +1,4 @@
-package com.javacodingagent;
+package javacodingagent;
 
 import javacodingagent.ai.AIClient;
 import lombok.AllArgsConstructor;

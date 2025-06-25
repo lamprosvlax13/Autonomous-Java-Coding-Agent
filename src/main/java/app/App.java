@@ -1,5 +1,6 @@
-package com.javacodingagent;
+package app;
 
+import javacodingagent.CodeGenerator;
 import javacodingagent.ai.AIClient;
 import javacodingagent.ai.AIClientFactory;
 import java.io.IOException;
