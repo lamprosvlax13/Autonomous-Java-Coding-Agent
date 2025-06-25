@@ -13,11 +13,12 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String inputPrompt = scanner.nextLine();
         String generatedCode = generator.generate(inputPrompt);
-        // Todo: 1. call Java Parser
-        //   Todo: 2. call Optimizer
-        //      Todo 3. find Bugs + risks memory leeks
-        //       Todo 4. Check if code run
-        //        Todo 5. Create Junit Test
+        // Todo Add-ons
+            // Todo: 1. call Java Parser
+            //   Todo: 2. call Optimizer
+            //      Todo 3. find Bugs + risks memory leeks
+            //       Todo 4. Check if code run
+            //        Todo 5. Create Junit Test
         System.out.println("Generated Code:\n" + generatedCode);
     }
 }
