@@ -30,7 +30,7 @@ public class DeepSeekAIClient {
         System.out.println("Using API Key: " + apiKey.trim());
 
         JSONObject json = new JSONObject();
-        json.put("model", "deepseek-chat");
+        json.put("model", "meta-llama/Llama-Vision-Free");
         json.put("messages", new JSONObject[]{
                 new JSONObject().put("role", "user").put("content", prompt)
         });
@@ -43,7 +43,7 @@ public class DeepSeekAIClient {
 
         RequestBody body = RequestBody.create(jsonBody, JSON);
         Request request = new Request.Builder()
-                .url("https://api.deepseek.com/v1/chat/completions") // Δοκιμάστε και με .com
+                .url("https://api.together.xyz/v1/chat/completions") // Δοκιμάστε και με .com
                 .addHeader("Authorization", "Bearer " + apiKey) // .trim() για τυχόν κενά
                 .addHeader("Content-Type", "application/json")
                 .post(body)
