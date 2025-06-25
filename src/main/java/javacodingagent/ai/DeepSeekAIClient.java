@@ -9,11 +9,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class DeepSeekAIClient {
+public class DeepSeekAIClient implements AIClient{
     private final OkHttpClient client;
     private final String apiKey;
-    private String model = "deepseek-chat";
-
+    private static String MODEL = "meta-llama/Llama-Vision-Free";
+    /*
     public DeepSeekAIClient(String apiKey) {
         this.apiKey = apiKey;
         this.client = new OkHttpClient.Builder()
@@ -21,8 +21,16 @@ public class DeepSeekAIClient {
                 .writeTimeout(60, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
+    }*/
+
+    public DeepSeekAIClient(String apiKey) {
+        this.apiKey = apiKey;
+        this.client = new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .build();
     }
 
+    @Override
     public String getCodeCompletion(String prompt) throws IOException {
         MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
@@ -30,7 +38,7 @@ public class DeepSeekAIClient {
         System.out.println("Using API Key: " + apiKey.trim());
 
         JSONObject json = new JSONObject();
-        json.put("model", "meta-llama/Llama-Vision-Free");
+        json.put("model", MODEL);
         json.put("messages", new JSONObject[]{
                 new JSONObject().put("role", "user").put("content", prompt)
         });

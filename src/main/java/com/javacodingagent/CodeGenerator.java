@@ -1,14 +1,13 @@
 package com.javacodingagent;
 
-import javacodingagent.ai.DeepSeekAIClient;
+import javacodingagent.ai.AIClient;
 import lombok.AllArgsConstructor;
 
 import java.io.IOException;
 
-
 @AllArgsConstructor
 public class CodeGenerator {
-    private final DeepSeekAIClient aiClient;
+    private final AIClient aiClient;
 
     public String generate(String requirement) throws IOException{
         String prompt = createPrompt(requirement);
@@ -25,6 +24,7 @@ public class CodeGenerator {
             2. Include proper error handling
             3. Add clear documentation
             4. Follow clean code principles
+            5. Include unit tests
             """, requirement);
     }
 }
