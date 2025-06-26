@@ -4,7 +4,7 @@ import okhttp3.*;
 import com.google.gson.*;
 import java.io.IOException;
 import java.util.*;
-
+/*
 public class NLPProcessor {
     private static final String HF_API_URL = "https://api-inference.huggingface.co/models/bert-base-multilingual-cased";
 
@@ -64,5 +64,42 @@ public class NLPProcessor {
             }
         }
         return entities;
+    }
+}*/
+public class NLPProcessor {
+    private NLPProcessingStrategy strategy;
+
+    public NLPProcessor(NLPProcessingStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void setStrategy(NLPProcessingStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public String analyzeAndGenerateCode(String text) throws IOException {
+        Map<String, List<String>> entities = strategy.preprocess(text);
+        return generateJavaCode(entities);
+    }
+
+    private String generateJavaCode(Map<String, List<String>> entities) {
+        StringBuilder code = new StringBuilder();
+        if (!entities.getOrDefault("classes", List.of()).isEmpty()) {
+            String className = entities.get("classes").get(0);
+            code.append("public class ").append(className).append(" {\n\n");
+
+            for (String field : entities.getOrDefault("fields", List.of())) {
+                code.append("    private String ").append(field).append(";\n");
+            }
+
+            for (String method : entities.getOrDefault("methods", List.of())) {
+                code.append("\n    public void ").append(method).append("() {\n")
+                        .append("        // TODO\n")
+                        .append("    }\n");
+            }
+
+            code.append("}");
+        }
+        return code.toString();
     }
 }
