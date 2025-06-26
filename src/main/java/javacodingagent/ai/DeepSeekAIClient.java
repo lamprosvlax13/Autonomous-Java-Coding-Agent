@@ -48,7 +48,7 @@ public class DeepSeekAIClient extends AiServices{
         RequestBody body = RequestBody.create(jsonBody, JSON);
         Request request = new Request.Builder()
                 .url("https://api.together.xyz/v1/chat/completions") // Δοκιμάστε και με .com
-                .addHeader("Authorization", "Bearer "+apiKey) // .trim() για τυχόν κενά
+                .addHeader("Authorization", "Bearer "+apiKey)
                 .addHeader("Content-Type", "application/json")
                 .post(body)
                 .build();

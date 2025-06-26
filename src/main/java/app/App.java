@@ -27,3 +27,57 @@ public class App {
         System.out.println("Generated Code:\n" + generatedCode);
     }
 }
+/*
+"""
+            Analyze the following software requirement and identify:
+            1. Main entities/classes needed
+            2. Key fields for each class
+            3. Main operations/methods
+            4. Relationships between classes
+
+            Requirement: %s
+
+            Respond with JSON format:
+            {
+                "classes": [
+                    {
+                        "name": "ClassName",
+                        "fields": [
+                            {"name": "fieldName", "type": "fieldType"}
+                        ],
+                        "methods": [
+                            {"name": "methodName", "returnType": "returnType"}
+                        ]
+                    }
+                ],
+                "relationships": [
+                    {"from": "ClassA", "to": "ClassB", "type": "relationshipType"}
+                ]
+            }
+            """*/
+
+/*
+Stage 3 Code imple
+
+"""
+            Write complete Java 17 code implementing the following requirement:
+
+            Requirement: %s
+
+            Analysis: %s
+
+            Design: %s
+
+            Requirements:
+            1. Use Java 17
+            2. Include proper Lombok annotations where appropriate
+            3. Add Spring Boot annotations if needed
+            4. Include proper error handling
+            5. Add clear documentation
+            6. Follow clean code principles
+            7. Include basic unit tests
+
+            Respond ONLY with the Java code in a single markdown code block.
+            """
+
+ */
