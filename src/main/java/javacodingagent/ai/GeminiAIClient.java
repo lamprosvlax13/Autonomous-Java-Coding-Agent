@@ -2,11 +2,14 @@ package javacodingagent.ai;
 
 import java.io.IOException;
 
-public class GeminiAIClient implements AIClient{
-    public GeminiAIClient(String apiKey){
+public class GeminiAIClient extends AiServices{
+
+    public GeminiAIClient(String prompt, String apiKey){
+        super(prompt, apiKey);
     }
+
     @Override
-    public String getCodeCompletion(String prompt) throws IOException{
-        return "";
+    protected void getCodeCompletion(){
+
     }
 }

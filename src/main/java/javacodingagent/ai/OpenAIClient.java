@@ -2,11 +2,14 @@ package javacodingagent.ai;
 
 import java.io.IOException;
 
-public class OpenAIClient implements AIClient{
-    public OpenAIClient(String apiKey){
+public class OpenAIClient extends AiServices{
+
+    public OpenAIClient(String prompt, String apiKey){
+        super(prompt, apiKey);
     }
+
     @Override
-    public String getCodeCompletion(String prompt) throws IOException{
-        return "";
+    protected void getCodeCompletion(){
+
     }
 }

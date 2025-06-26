@@ -1,17 +1,20 @@
 package javacodingagent;
 
-import javacodingagent.ai.AIClient;
+import javacodingagent.ai.AiServices;
+import javacodingagent.ai.IAiServices;
 import lombok.AllArgsConstructor;
 
 import java.io.IOException;
 
 @AllArgsConstructor
 public class CodeGenerator {
-    private final AIClient aiClient;
+    private final AiServices aiClient;
 
     public String generate(String requirement) throws IOException{
         String prompt = createPrompt(requirement);
-        return aiClient.getCodeCompletion(prompt);
+        aiClient.setPrompt(prompt);
+        aiClient.callLlm();
+        return aiClient.getResponse();
     }
 
     private String createPrompt(String requirement) {
